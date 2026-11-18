@@ -17,3 +17,7 @@ void clear(std::array<int, 5>& pile, int& compteur) {
     pile = {};
     compteur = 0;
 }
+
+int& top(std::array<int, 5>& pile, int& compteur) {
+    return pile[compteur - 1];
+}
