@@ -13,7 +13,7 @@ bool pop(std::array<int, taille_pile>& piles, int& compteur);
 
 bool empty(int compteur);
 
-void clear(std::array<int, 5>& pile, int& compteur);
+bool clear(std::array<int, 5>& pile, int& compteur);
 
 int size(int compteur);
 
