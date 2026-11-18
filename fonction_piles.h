@@ -10,4 +10,14 @@ const int taille_pile = 5;
 bool push(std::array<int, taille_pile>& piles, int& compteur,int valeur);
 bool pop(std::array<int, taille_pile>& piles, int& compteur);
 
+
+bool empty(int compteur);
+
+void clear(std::array<int, 5>& pile, int& compteur);
+
+int size(int compteur);
+
+int& top(std::array<int, 5>& pile, int& compteur);
+
+
 #endif //INC_05_PILES_FONCTION_PILES_H
