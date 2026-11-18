@@ -1,5 +1,6 @@
 #include <iostream>
 #include <array>
+#include "fonction_piles.h"
 
 
 using namespace std;

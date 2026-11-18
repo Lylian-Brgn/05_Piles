@@ -4,5 +4,12 @@
 
 #ifndef INC_05_PILES_FONCTION_PILES_H
 #define INC_05_PILES_FONCTION_PILES_H
+#include <array>
+
+bool empty(int compteur);
+
+void clear(std::array<int, 5>& pile, int& compteur);
+
+int size(int compteur);
 
 #endif //INC_05_PILES_FONCTION_PILES_H
