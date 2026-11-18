@@ -4,5 +4,10 @@
 
 #ifndef INC_05_PILES_FONCTION_PILES_H
 #define INC_05_PILES_FONCTION_PILES_H
+#include <array>
+const int taille_pile = 5;
+
+bool push(std::array<int, taille_pile>& piles, int& compteur,int valeur);
+bool pop(std::array<int, taille_pile>& piles, int& compteur);
 
 #endif //INC_05_PILES_FONCTION_PILES_H
