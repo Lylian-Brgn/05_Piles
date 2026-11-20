@@ -56,16 +56,24 @@ int main() {
             case 3:
                 try {
                     valeur = top(pile, compteur);
+                    if (valeur == 0 && compteur == 0) {
+                        std::cout << "La pile est vide." << std::endl;
+                        break;
+                    }
                     std::cout << "Sommet : " << valeur << std::endl;
                 }catch (std::exception& e) {
                     std::cout << e.what() << std::endl;
                 }
                 break;
             case 4:
+                if (compteur == 0) {
+                    std::cout << "La pile est vide." << std::endl;
+                    break;
+                }
                 try {
+                    std::cout << "Valeur de remplacement : ";
                     std::cin >> valeur;
                     top(pile, compteur) = valeur;
-                    std::cout << "Valeur de remplacement : " << valeur << std::endl;
                     std::cout << "Valeur remplacée." << std::endl;
                 }catch (std::exception& e) {
                     std::cout << e.what() << std::endl;

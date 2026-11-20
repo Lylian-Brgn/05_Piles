@@ -23,7 +23,7 @@ int pop(std::array<int, taille_pile>& piles, int& compteur) {
     }
 
     int ancienne_valeur = piles[compteur - 1];
-    piles[compteur] = 0;
+    piles[compteur - 1] = 0;
     compteur--;
     return ancienne_valeur;
 }
@@ -44,7 +44,7 @@ bool clear(std::array<int, 5>& pile, int& compteur) {
 
 int& top(std::array<int, 5>& pile, int& compteur) {
     if (compteur == 0) {
-        std::cout << "La pile est vide." << std::endl;
+        return pile[compteur];
     }
     return pile[compteur - 1];
 }
