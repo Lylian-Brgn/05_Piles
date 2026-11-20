@@ -3,9 +3,9 @@
 //
 
 #include "fonction_piles.h"
-#include <array>
 #include <stdexcept>
 #include <iostream>
+#include <iomanip>
 
 void push(std::array<int, taille_pile>& piles, int& compteur,int valeur){
 
@@ -17,15 +17,13 @@ void push(std::array<int, taille_pile>& piles, int& compteur,int valeur){
     compteur++;
 }
 
-int pop(std::array<int, taille_pile>& piles, int& compteur) {
+void pop(std::array<int, taille_pile>& piles, int& compteur) {
     if (compteur == 0) {
         throw std::underflow_error("Erreur : impossible de dépiler une pile vide.");
     }
 
-    int ancienne_valeur = piles[compteur - 1];
     piles[compteur - 1] = 0;
     compteur--;
-    return ancienne_valeur;
 }
 
 bool empty(int compteur) {
@@ -55,12 +53,18 @@ void afficher_pile(std::array<int, 5>& pile, int& compteur) {
     } else if (compteur == 1) {
         std::cout << "Sommet / Fond -> " << pile[compteur - 1] << std::endl;
     } else {
-        std::cout << "Sommet -> ";
         for (size_t i = 0; i < compteur; i++) {
-            std::cout << pile[i] << std::endl;
-            if (i == pile.size() - 1) {
-                std::cout << "Fond -> " << pile[compteur - 1] << std::endl;
+            if (i == 0) {
+                std::cout << "Sommet -> "  << pile[i] << std::endl;
+            } else if (i == compteur - 1) {
+                std::cout << "Fond   -> "  << pile[compteur - 1] << std::endl;
+            } else {
+                std::cout << std::setw(11)<< pile[i] << std::endl;
             }
         }
     }
+}
+
+void afficher_pile_vide() {
+    std::cout << "La pile est vide." << std::endl;
 }

@@ -8,7 +8,7 @@
 const int taille_pile = 5;
 
 void push(std::array<int, taille_pile>& piles, int& compteur,int valeur);
-int pop(std::array<int, taille_pile>& piles, int& compteur);
+void pop(std::array<int, taille_pile>& piles, int& compteur);
 
 
 bool empty(int compteur);
@@ -21,5 +21,6 @@ int& top(std::array<int, 5>& pile, int& compteur);
 
 void afficher_pile(std::array<int, 5>& pile, int& compteur);
 
+void afficher_pile_vide();
 
 #endif //INC_05_PILES_FONCTION_PILES_H

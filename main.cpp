@@ -11,8 +11,7 @@ int main() {
     int choix;
     int valeur;
 
-    std::cout << "Ce programme permet de manipuler une pile d'entiers." << std::endl;
-    std::cout << std::endl;
+    std::cout << "Ce programme permet de manipuler une pile d'entiers." << std::endl << std::endl;
 
     do {
         std::cout << "1 - Empiler" << std::endl;
@@ -47,8 +46,9 @@ int main() {
                 break;
             case 2:
                 try {
-                    int tmp = pop(pile, compteur);
-                    std::cout << "Valeur retiré : " << tmp << std::endl;
+                    int tmp = top(pile, compteur);
+                    std::cout << "valeur retirée : " << tmp << std::endl;
+                    pop(pile, compteur);
                 }catch (std::exception& e) {
                     std::cout << e.what() << std::endl;
                 }
@@ -57,7 +57,7 @@ int main() {
                 try {
                     valeur = top(pile, compteur);
                     if (valeur == 0 && compteur == 0) {
-                        std::cout << "La pile est vide." << std::endl;
+                        afficher_pile_vide();
                         break;
                     }
                     std::cout << "Sommet : " << valeur << std::endl;
@@ -67,7 +67,7 @@ int main() {
                 break;
             case 4:
                 if (compteur == 0) {
-                    std::cout << "La pile est vide." << std::endl;
+                    afficher_pile_vide();
                     break;
                 }
                 try {
@@ -82,7 +82,7 @@ int main() {
             case 5: {
                 bool resultat = empty(compteur);
                 if (resultat) {
-                    std::cout << "La pile est vide." << std::endl;
+                    afficher_pile_vide();
                 } else {
                     std::cout << "La pile n'est pas vide." << std::endl;
                 }
