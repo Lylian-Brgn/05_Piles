@@ -8,7 +8,7 @@
 const int taille_pile = 5;
 
 void push(std::array<int, taille_pile>& piles, int& compteur,int valeur);
-void pop(std::array<int, taille_pile>& piles, int& compteur);
+int pop(std::array<int, taille_pile>& piles, int& compteur);
 
 
 bool empty(int compteur);

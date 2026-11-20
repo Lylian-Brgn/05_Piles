@@ -16,13 +16,15 @@ void push(std::array<int, taille_pile>& piles, int& compteur,int valeur){
     compteur++;
 }
 
-void pop(std::array<int, taille_pile>& piles, int& compteur) {
+int pop(std::array<int, taille_pile>& piles, int& compteur) {
     if (compteur == 0) {
         throw std::underflow_error("Erreur : impossible de dépiler une pile vide.");
     }
 
+    int ancienne_valeur = piles[compteur];
     piles[compteur] = 0;
     compteur--;
+    return ancienne_valeur;
 }
 
 bool empty(int compteur) {
