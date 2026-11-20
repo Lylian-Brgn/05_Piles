@@ -74,7 +74,7 @@ int main() {
             case 5: {
                 bool resultat = empty(compteur);
                 if (resultat) {
-                    std::cout << "La pile pas vide." << std::endl;
+                    std::cout << "La pile est vide." << std::endl;
                 } else {
                     std::cout << "La pile n'est pas vide." << std::endl;
                 }
@@ -97,8 +97,6 @@ int main() {
                 std::cout << "Sélectionnez un élément existant de la liste" << std::endl;
                 break;
         }
-
-
     }while(choix != 0);
 
     return 0;
