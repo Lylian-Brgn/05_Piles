@@ -38,7 +38,7 @@ int main() {
                     valeur = 0;
                     std::cin >> valeur;
 
-                    opreation_ok = push(pile, compteur,valeur);
+                    push(pile, compteur,valeur);
                     if (opreation_ok) {
                         std::cout << "Valeur empilée." << std::endl;
                     }
@@ -71,10 +71,9 @@ int main() {
             case 5:
                 bool resultat = empty(compteur);
                 if (resultat) {
-                    
+                    1 + 1;
                 }
-                }
-        }
+            }
 
     }while(choix != 0);
 
