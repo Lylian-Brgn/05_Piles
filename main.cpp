@@ -10,7 +10,6 @@ int main() {
 
     int choix;
     int valeur;
-    bool opreation_ok = false;
 
     std::cout << "Ce programme permet de manipuler une pile d'entiers." << std::endl;
     std::cout << std::endl;
@@ -39,19 +38,21 @@ int main() {
                     std::cin >> valeur;
 
                     push(pile, compteur,valeur);
-                    if (opreation_ok) {
-                        std::cout << "Valeur empilée." << std::endl;
-                    }
+
+                    std::cout << "Valeur empilée." << std::endl;
+
                 }catch (std::exception& e) {
                     std::cout << e.what() << std::endl;
                 }
+                break;
             case 2:
                 try {
-                    pop(pile, compteur);
-                    std::cout << "Valeur retiré : TO DO !!!" << std::endl;
+                    int tmp = pop(pile, compteur);
+                    std::cout << "Valeur retiré : " << tmp << std::endl;
                 }catch (std::exception& e) {
                     std::cout << e.what() << std::endl;
                 }
+                break;
             case 3:
                 try {
                     valeur = top(pile, compteur);
@@ -59,6 +60,7 @@ int main() {
                 }catch (std::exception& e) {
                     std::cout << e.what() << std::endl;
                 }
+                break;
             case 4:
                 try {
                     std::cin >> valeur;
@@ -68,12 +70,34 @@ int main() {
                 }catch (std::exception& e) {
                     std::cout << e.what() << std::endl;
                 }
-            case 5:
+                break;
+            case 5: {
                 bool resultat = empty(compteur);
                 if (resultat) {
-                    1 + 1;
+                    std::cout << "La pile pas vide." << std::endl;
+                } else {
+                    std::cout << "La pile n'est pas vide." << std::endl;
                 }
+                break;
             }
+            case 6:
+                std::cout << "Nombre de valeurs : " << compteur << std::endl;
+                break;
+            case 7:
+                clear(pile, compteur);
+                std::cout << "Pile vidée." << std::endl;
+                break;
+            case 8:
+                    afficher_pile(pile, compteur);
+                break;
+            case 0:
+                std::cout << "Fin de programme." << std::endl;
+                break;
+            default:
+                std::cout << "Sélectionnez un élément existant de la liste" << std::endl;
+                break;
+        }
+
 
     }while(choix != 0);
 

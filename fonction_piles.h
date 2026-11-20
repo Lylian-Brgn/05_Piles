@@ -19,5 +19,7 @@ int size(int compteur);
 
 int& top(std::array<int, 5>& pile, int& compteur);
 
+void afficher_pile(std::array<int, 5>& pile, int& compteur);
+
 
 #endif //INC_05_PILES_FONCTION_PILES_H
